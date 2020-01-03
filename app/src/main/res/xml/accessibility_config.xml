@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityEventTypes="typeAllMask"
+    android:accessibilityFeedbackType="feedbackAllMask"
+    android:accessibilityFlags="flagDefault|flagIncludeNotImportantViews|flagReportViewIds|flagRetrieveInteractiveWindows|flagRequestEnhancedWebAccessibility|flagRequestFilterKeyEvents"
+    android:canPerformGestures="true"
+    android:canRequestEnhancedWebAccessibility="true"
+    android:canRequestFilterKeyEvents="true"
+    android:canRetrieveWindowContent="true"
+    android:description="@string/app_name"
+    android:notificationTimeout="1000">
+
+    <!--android:packageNames="com.android.packageinstaller" 国内有不少手机都是自定义安装界面，packageNames不固定-->
+    <!--
+    android:description 辅助功能描述
+    android:packageNames 指定辅助功能监听的包名，不指定表示监听所有应用
+    android:accessibilityEventTypes 事件类型，typeAllMask表示接收所有事件
+    android:accessibilityFlags 查找截点方式，一般配置为flagDefault默认方式
+    android:accessibilityFeedbackType 操作按钮以后给用户的反馈类型，包括声音，震动等
+    android:notificationTimeout 响应超时
+    android:canRetrieveWindowContent 是否允许提取窗口的节点信息
+    -->
+</accessibility-service>
