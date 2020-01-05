@@ -50,7 +50,23 @@ public class GuardHandle extends Handler {
                 intent.setPackage(SHEEP_PACKAGE);
                 BaseApp.getContext().sendBroadcast(intent);
             }
+        },3000);
+        postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(BEGIN_ACTION);
+                intent.setPackage(SHEEP_PACKAGE);
+                BaseApp.getContext().sendBroadcast(intent);
+            }
         },5000);
+        postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(BEGIN_ACTION);
+                intent.setPackage(SHEEP_PACKAGE);
+                BaseApp.getContext().sendBroadcast(intent);
+            }
+        },10000);
     }
 
     public GuardHandle() {
@@ -66,7 +82,7 @@ public class GuardHandle extends Handler {
 
     private void startBeat() {
         LogUtil.logInfo(TAG,"startBeat");
-        checkBeat();
+        //checkBeat();
         sendBeat();
     }
 

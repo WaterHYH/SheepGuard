@@ -1,5 +1,7 @@
 package com.hui.sheepguard;
 
+import android.content.Intent;
+
 import com.dodoo_tech.gfal.app.GFALApp;
 import com.dodoo_tech.gfal.utils.LogUtil;
 import com.tencent.bugly.Bugly;
@@ -14,11 +16,12 @@ public class BaseApp extends GFALApp {
         Bugly.init(getApplicationContext(), "b67b71c2d4", false);
 
         //注册保活小绵羊的广播
-        GuardReceiver.registerReceiver(this);
+        //GuardReceiver.registerReceiver(this);
 
         //开启保活线程
         GuardHandle.start();
 
+        startService(new Intent(this,GuardService.class));
     }
 
     @Override
