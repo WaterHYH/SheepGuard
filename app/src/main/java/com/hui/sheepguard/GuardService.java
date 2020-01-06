@@ -38,7 +38,7 @@ public class GuardService extends Service {
         notification.flags = Notification.FLAG_ONLY_ALERT_ONCE | Notification.FLAG_NO_CLEAR;
 
         // 显示通知
-        startForeground(NOTIFICATION_ID,notification);
+        // startForeground(NOTIFICATION_ID,notification);
 
         return super.onStartCommand(intent, flags, startId);
     }
