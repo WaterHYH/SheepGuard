@@ -14,6 +14,7 @@ import com.dodoo_tech.gfal.utils.LogUtil;
 
 public class GuardService extends Service {
     private static final String TAG = "GuardService";
+    public static FileGuard fileGuard;
 
     @Nullable
     @Override
@@ -38,8 +39,13 @@ public class GuardService extends Service {
         notification.flags = Notification.FLAG_ONLY_ALERT_ONCE | Notification.FLAG_NO_CLEAR;
 
         // 显示通知
-        // startForeground(NOTIFICATION_ID,notification);
+        startForeground(NOTIFICATION_ID,notification);
 
-        return super.onStartCommand(intent, flags, startId);
+        if (fileGuard == null) {
+            fileGuard = new FileGuard();
+            fileGuard.lock();
+        }
+
+        return START_STICKY;
     }
 }
